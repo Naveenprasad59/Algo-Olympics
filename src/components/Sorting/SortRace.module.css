@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6rem;
+  flex: 1;
+}
+
+.mainSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  flex: 1;
+}
+
+.raceHeading {
+  font-size: 6rem;
+  color: var(--primary-text-color);
+}
+
+.raceTypesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.raceTypeCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 4rem;
+  border: 1px solid var(--primary-text-color);
+  cursor: pointer;
+  border-radius: 0.8rem;
+}
+
+.raceResult > p,
+.raceTypeCard > p {
+  font-size: 3rem;
+  color: var(--primary-text-color);
+}
+
+.selectedRaceTypeCard > p,
+.raceTypeCard:hover > p {
+  color: var(--secondary-text-color) !important;
+}
+
+.raceLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-text-color);
+  font-size: 4rem;
+}
+
+.raceResult {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 4rem;
+  border: 1px solid var(--primary-text-color);
+  border-radius: 0.8rem;
+}
+
+.raceTypeCard > p {
+  font-size: 3rem;
+  color: var(--primary-text-color);
+}

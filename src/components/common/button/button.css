@@ -1,0 +1,13 @@
+.button-primary {
+  width: 12rem;
+  height: 4rem;
+  background: none;
+  border: 1px solid var(--primary-text-color);
+  color: var(--primary-text-color);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.button-primary:hover {
+  background: var(--secondary-bg);
+}
