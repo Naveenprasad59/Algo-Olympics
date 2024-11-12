@@ -92,3 +92,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.winnerCard {
+  background-color: var(--secondary-bg);
+}
+
+.winnerText {
+  color: var(--secondary-text-color) !important;
+}

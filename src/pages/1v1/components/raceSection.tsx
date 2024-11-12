@@ -69,12 +69,12 @@ export const RaceCard = ({ raceName, algoNames, hasStarted: startRace, onRaceEnd
       <p className={styles.raceSectionHeader}>{raceName}</p>
       <div className={styles.raceSection}>
         <hr className={styles.raceHrule} />
-        <div className={styles.raceCard}>
+        <div className={`${styles.raceCard} ${winner === algoNames[0] ? styles.winnerCard : ''}`}>
           <p className={styles.raceText}>{sortingNameMap[algoNames[0]]}</p>
         </div>
         <div className={styles.raceWinnerCircle}>
           <RenderWhen renderIf={isRaceOver}>
-            <p>Winner: {sortingNameMap[winner ?? SORT_KEYS.MERGE]}</p>
+            <p className={styles.winnerText}>Winner: {sortingNameMap[winner ?? SORT_KEYS.MERGE]}</p>
           </RenderWhen>
           <RenderWhen renderIf={!isRaceOver}>
             <RenderWhen renderIf={!startRace}>
@@ -85,7 +85,7 @@ export const RaceCard = ({ raceName, algoNames, hasStarted: startRace, onRaceEnd
             </RenderWhen>
           </RenderWhen>
         </div>
-        <div className={styles.raceCard}>
+        <div className={`${styles.raceCard} ${winner === algoNames[1] ? styles.winnerCard : ''}`}>
           <p className={styles.raceText}>{sortingNameMap[algoNames[1]]}</p>
         </div>
       </div>
