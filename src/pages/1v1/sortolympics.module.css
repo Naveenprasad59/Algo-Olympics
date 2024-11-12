@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid var(--primary-text-color);
+}
+
+.headerSection > p {
+  font-size: 2rem;
+  color: var(--primary-text-color);
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.raceSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.raceSectionHeader {
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  color: var(--primary-text-color);
+}
+
+.raceSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.raceHrule {
+  margin: 0;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  height: 1px;
+  width: 100%;
+  border: 1px solid var(--primary-text-color);
+}
+
+.raceCard {
+  border: 1px solid var(--primary-text-color);
+  border-radius: 0.4rem;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+  height: 4rem;
+  z-index: 2;
+  background: var(--primary-bg);
+}
+
+.raceWinnerCircle {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 1px solid var(--primary-text-color);
+  background: var(--primary-bg);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.raceWinnerCircle p,
+.raceText {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: var(--primary-text-color);
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

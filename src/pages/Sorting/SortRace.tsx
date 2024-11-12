@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
-import Button from '../common/button';
-
 import styles from './SortRace.module.css';
 
-import { RenderWhen } from '../HOC/RenderWhen';
 import { RaceResults } from './RaceResults';
+import { SORT_KEYS } from '../../pages/1v1/constants';
+import { RenderWhen } from '../../components/HOC/RenderWhen';
+import Button from '../../components/common/button';
 
 enum SORT_RACE_TYPES {
   SMALL,
@@ -14,7 +14,7 @@ enum SORT_RACE_TYPES {
   MARATHON,
 }
 
-export type PlaceType = { name: string; time: number };
+export type PlaceType = { name: SORT_KEYS; time: number };
 
 export const SortRace = (): JSX.Element => {
   const raceNames = useRef({
@@ -63,7 +63,20 @@ export const SortRace = (): JSX.Element => {
       setResults(result.result);
       setRaceLoading(false);
     });
-    workerInstance.postMessage({ numberOfElements: raceSize.current[type] });
+    workerInstance.postMessage({
+      numberOfElements: raceSize.current[type],
+      race: 'Sortathon',
+      sortingAlgoKeys: [
+        SORT_KEYS.BOGO,
+        SORT_KEYS.BUBBLE,
+        SORT_KEYS.HEAP,
+        SORT_KEYS.INBUILT,
+        SORT_KEYS.INSERTION,
+        SORT_KEYS.MERGE,
+        SORT_KEYS.QUICK,
+        SORT_KEYS.RADIX,
+      ],
+    });
   };
 
   useEffect(() => {
@@ -74,7 +87,7 @@ export const SortRace = (): JSX.Element => {
 
   return (
     <div className={styles.container}>
-      <p className={styles.raceHeading}>Choose race format</p>
+      <p className={styles.raceHeading}>{raceStarted && !raceLoading ? 'Race Results' : 'Choose race format'}</p>
       <main className={styles.mainSection}>
         <RenderWhen renderIf={!raceStarted}>
           <>

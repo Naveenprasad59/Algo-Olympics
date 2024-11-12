@@ -24,8 +24,17 @@ function countingSort(arr: number[], exp: number): number[] {
   return arr;
 }
 
+function findMax(arr: number[]): number {
+  let max = arr[0];
+  for (const value of arr) {
+    max = Math.max(max, value);
+  }
+  return max;
+}
+
 export function radixSort(arr: number[]): number[] {
-  const max = Math.max(...arr);
+  // const max = Math.max(...arr);
+  const max = findMax(arr);
 
   for (let exp = 1; Math.floor(max / exp) > 0; exp *= 10) {
     countingSort(arr, exp);

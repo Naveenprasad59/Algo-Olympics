@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container > h1 {
+  font-size: 5rem;
+  line-height: 5rem;
+  color: var(--primary-text-color);
+}
+
+.raceTypeCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 4rem;
+  border: 1px solid var(--primary-text-color);
+  cursor: pointer;
+  border-radius: 0.8rem;
+  width: 25rem;
+}
+
+.raceTypeCard > p {
+  font-size: 3rem;
+  color: var(--primary-text-color);
+}
+
+.raceTypeCard:hover > p {
+  color: var(--secondary-text-color) !important;
+}

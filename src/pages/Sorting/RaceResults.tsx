@@ -8,7 +8,7 @@ export const RaceResults = ({ results }: { results: PlaceType[] }): JSX.Element 
       {results.map((result) => (
         <div key={result.name} className={styles.raceResult}>
           <p>
-            {result.name} - {result.time}
+            {result.name} - {result.time}ms
           </p>
         </div>
       ))}
